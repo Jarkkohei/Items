@@ -17,7 +17,7 @@ export class ItemService {
     //this.items = this.afs.collection('items').valueChanges();
 
     //  Set our itemsCollection as the actual Firestore collection.
-    this.itemsCollection = this.afs.collection('items');
+    this.itemsCollection = this.afs.collection('items', ref => ref.orderBy('title', 'asc'));
 
     //  Return the snapshot of the Firestore collection named 'items' as a observable. 
     //  Map the changes and also get the id of each item in the collection.
